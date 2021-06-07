@@ -1,8 +1,14 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
+require('webpack')
+
 module.exports = {
-    chainWebpack: function(config) {
+    chainWebpack: 
+    /**
+     * @param {chainWebpack} config
+     */
+    function(config) {
         config
             .entry('adaptive')
             .add(path.resolve('src/foxit-lib/adaptive.js'))
@@ -24,6 +30,23 @@ module.exports = {
             config.module
             .rule("eslint")
             .exclude.add(/node_modules|foxit-lib|license\-key\.js/);
+
+            config.module
+            .rule('addon')
+            .type('javascript/auto')
+            .include.add(/foxit-lib/)
+            .end()
+            .test(/\addon\.info\.json$/)
+            .use('babel')
+                .loader('babel-loader')
+                .options({
+                    "presets": ["@babel/env"]
+                })
+                .end()
+            .use('addon-loader')
+                .loader('@foxitsoftware/addon-loader')
+                .end()
+        config.externals(['UIExtension', 'PDFViewCtrl'])
     },
     configureWebpack: {
         plugins: [
