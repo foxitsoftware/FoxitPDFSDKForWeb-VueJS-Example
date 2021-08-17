@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "setup": "npm install",
-    "postsetup": "npm run update-sdk",
-    "update-sdk": "node development/setup.js",
+    "postinstall": "npm i -S @foxitsoftware/foxit-pdf-sdk-for-web-library",
     "serve": "cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=development vue-cli-service serve",
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=production vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -15,7 +13,7 @@
     "vue": "^2.6.10"
   },
   "devDependencies": {
-    "@foxitsoftware/addon-loader": "^0.7.3-alpha3",
+    "@foxitsoftware/addon-loader": "^0.7.3",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-service": "^4.1.0",

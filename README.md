@@ -4,7 +4,7 @@ This guide shows two examples. One introduces how to quickly run the out-of-the-
 
 ## Quickly run the out-of-the-box example for Vue.js
 
-FoxitPDFSDK for Web provides a boilerplate project for [@vue/cli](https://cli.vuejs.org/guide/) app. This example can be found at `../integrations/` inside FoxitPDFSDK for Web package.
+FoxitPDFSDK for Web provides a boilerplate project for [@vue/cli](https://cli.vuejs.org/guide/) app.
 
 ### Prerequisites
 
@@ -13,18 +13,21 @@ FoxitPDFSDK for Web provides a boilerplate project for [@vue/cli](https://cli.vu
 
 ### Getting started
 
-Enter `../integratons/vue.js/` inside FoxitPDFSDK for Web, and run:
 
-```sh
-npm run setup
+Clone the repository to any location:
+
+```bash
+git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-VueJS-Example.git
 ```
 
-This setup will implement the followings:
+Navigate to `FoxitPDFSDKForWeb-VueJS-Example/`, and execute:
 
-- `npm install` - install dependencies.
-- `npm run update-sdk`
-  - Copy `lib` folder from the root folder to the `../integratons/vue.js/src/`, and auto rename it to `foxit-lib`.
-  - Copy `..examples/license-key.js`to the `../integratons/react.js/src/`.
+```bash
+cd ./FoxitPDFSDKForWeb-VueJS-Example
+npm install
+```
+
+This step will download all dependencies into `node_modules` folder.
 
 ### Runnning the example
 
@@ -42,20 +45,13 @@ This integration assumes you have [@vue/cli](https://cli.vuejs.org/guide/) app i
 
 - [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
 - [@vue/cli](https://cli.vuejs.org/guide/)
-- [FoxitPDFSDK for Web](https://developers.foxitsoftware.com/pdf-sdk/Web)
+- [FoxitPDFSDK for Web](https://www.npmjs.com/package/@foxitsoftware/foxit-pdf-sdk-for-web-library)
 
 ### Setup
 
 Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for Web as SDK.
 
-1. In SDK, duplicate the following folder and files to `VueJS/src`, and change the `lib` name to `foxit-lib`.
-
-   - The `lib`folder. 
-   - The `../examples/license-key.js` file.
-   - The `../integrations/vue.js/src/preload.js` file
-
-   Besides, to correctly referene your fonts lib, you also need to duplicate the `external` folder inside SDK to `VueJS/src/foxit-lib/assets`. 
-
+1. Install `@foxitsoftware/foxit-pdf-sdk-for-web-library`
 2. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `VueJS/package.json`.
 
    ```sh
@@ -64,12 +60,6 @@ Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for 
    ```
 
    _The purpose of this step is to void memory leak error._
-
-<!-- 3. 安装 Addon 合并工具
-
-    ```sh
-    npm i -D @foxitsoftware/addon-loader
-    ``` -->
 
 ### Configuration
 
@@ -87,9 +77,10 @@ For the configuration details, refer to the counterpart files in SDK.
 For the configuration details, refer to the counterpart files in SDK.
 
 ### Referene Addons
-If you are integrating FoxitPDFSDK for Web into your existing Vue project, you should read this section before continue. You may want to check out [Addons](../addons/introduction.md) for detailed introductions. 
 
-Here we introduce three ways to reference SDK addons for Anguar project, you may choose one of them based on your needs. This [Comparison](#Addons reference methods comparison) will help you to better understand the difference of the three ways and make a choice. 
+If you are integrating FoxitPDFSDK for Web into your existing Vue project, you should read this section before continue. You may want to check out [Addons](http://webviewer-demo.foxitsoftware.com/docs/developer-guide/ui-extension/addons/introduction.html) for detailed introductions.
+
+Here we introduce three ways to reference SDK addons for Anguar project, you may choose one of them based on your needs. This [Comparison](#Addons reference methods comparison) will help you to better understand the difference of the three ways and make a choice.
 
 #### 1. Reference fragmented addons
 
@@ -122,17 +113,26 @@ Where `the_path_to_foxit_lib` is the SDK lib folder，
 
     ```js
         import * as UIExtension from '../foxit-lib/UIExtension.full.js'
-        import filePropertyAddon from '../foxit-lib/uix-addons/file-property/addon.info.json';
-        import multiMediaAddon from '../foxit-lib/uix-addons/multi-media/addon.info.json';
-        import passwordProtectAddon from '../foxit-lib/uix-addons/password-protect/addon.info.json';
-        import redactionAddon from '../foxit-lib/uix-addons/redaction/addon.info.json';
-        import pathObjectsAddon from '../foxit-lib/uix-addons/path-objects/addon.info.json';
-        import printAddon from '../foxit-lib/uix-addons/print/addon.info.json';
-        import fullScreenAddon from '../foxit-lib/uix-addons/full-screen/addon.info.json';
-        import importFormAddon from '../foxit-lib/uix-addons/import-form/addon.info.json';
-        import exportFormAddon from '../foxit-lib/uix-addons/export-form/addon.info.json';
-        import undoRedoAddon from '../foxit-lib/uix-addons/undo-redo/addon.info.json';
-        import textObjectAddon from '../foxit-lib/uix-addons/text-object/addon.info.json';
+        import filePropertyAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/file-property/addon.info.json';
+        import multiMediaAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/multi-media/addon.info.json';
+        import passwordProtectAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/password-protect/addon.info.json';
+        import redactionAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/redaction/addon.info.json';
+        import pathObjectsAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/path-objects/addon.info.json';
+        import printAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/print/addon.info.json';
+        import fullScreenAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/full-screen/addon.info.json';
+        import importFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/import-form/addon.info.json';
+        import exportFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/export-form/addon.info.json';
+        import undoRedoAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/undo-redo/addon.info.json';
+        import textObjectAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/text-object/addon.info.json';
+        import thumbnailAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/thumbnail/addon.info.json';
+        import formDesignerAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/form-designer/addon.info.json';
+        import formToSheetAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/form-to-sheet/addon.info.json';
+        import readAloudAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/read-aloud/addon.info.json';
+        import hContinuesAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/h-continuous/addon.info.json';
+        import RecognitionFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/recognition-form/addon.info.json';
+        import pageTemplateAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/page-template/addon.info.json';
+        import xfaFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/xfa-form/addon.info.json';
+
     ```
 
     And pass addons to the PDFUI constructor:
@@ -150,12 +150,23 @@ Where `the_path_to_foxit_lib` is the SDK lib folder，
                 fullScreenAddon,
                 importFormAddon,
                 exportFormAddon,
-                undoRedoAddon
+                undoRedoAddon,
+                thumbnailAddon,
+                formToSheetAddon,
+                readAloudAddon,
+                hContinuesAddon,
+                RecognitionFormAddon,
+                pageTemplateAddon,
+                xfaFormAddon,
+                pageTemplateAddon
             ].concat(
                 // text-object addon is disabled on mobile platform
                 UIExtension.PDFViewCtrl.DeviceInfo.isMobile
                     ? []
-                    : textObjectAddon
+                    : [
+                        textObjectAddon, 
+                        formDesignerAddon
+                    ]
             ),
             // other options
         });
@@ -167,23 +178,26 @@ The allInOne.js already combines all addons, which locates in `foxit-lib/uix-add
 
 ```js
 // ...
-import * as UIExtension from '../foxit-lib/UIExtension.full.js';
-import * as Addons from '../foxit-lib/uix-addons/allInOne.js';
+import * as UIExtension from '@foxitsoftware/foxit-pdf-sdk-for-web-library'
+import * as Addons from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/allInOne.js';
 // ...
 ```
 
 And pass parameters to the PDFUI constructor:
 
 ```js
+const MOBILE_UNSUPPORTED_ADDONS = [
+    'textEditObject', 'FormDesigner'
+];
 this.pdfui = new UIExtension.PDFUI({
     addons: UIExtension.PDFViewCtrl.DeviceInfo.isMobile
-        ? Addons.filter(it => it.getName() !== 'textEditObject')
+        ? Addons.filter(it => MOBILE_UNSUPPORTED_ADDONS.indexOf(it.getName()) === -1)
         : Addons,
     // other options
 });
 ```
 
-#### Comparions of addons reference methods 
+#### Comparions of addons reference methods
 
 |Referene method|Configuration|HTTP Requests|Modifiable (e.g Localization resoures, and addon.info.json)|
 |--|--|--|--|
@@ -191,7 +205,7 @@ this.pdfui = new UIExtension.PDFUI({
 |Modularized|Configure gulp|0|Yes,but should re-merge the addons after modification |
 |allInOne.js|No|1|No|
 
-Note: You can rebuild allInOne.js by using our [Addons merge tools](../addons/introduction.html#how-to-merge-addons)
+Note: You can rebuild allInOne.js by using our [Addons merge tools](http://webviewer-demo.foxitsoftware.com/docs/developer-guide/ui-extension/addons/introduction.html#merge-addons)
 
 ### Running your application
 
