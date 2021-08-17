@@ -11,7 +11,7 @@ module.exports = {
     function(config) {
         config
             .entry('adaptive')
-            .add(path.resolve('src/foxit-lib/adaptive.js'))
+            .add(path.resolve('./node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library', 'lib/adaptive.js'))
             .end()
             .entry("preload")
             .add(path.resolve("src/preload.js"))
@@ -25,17 +25,15 @@ module.exports = {
             })
             .end()
             .module.rule("js")
-            .exclude.add(/node_modules|foxit-lib|license\-key\.js/);
+            .exclude.add(/node_modules|license\-key\.js/);
 
             config.module
             .rule("eslint")
-            .exclude.add(/node_modules|foxit-lib|license\-key\.js/);
+            .exclude.add(/node_modules|license\-key\.js/);
 
             config.module
             .rule('addon')
             .type('javascript/auto')
-            .include.add(/foxit-lib/)
-            .end()
             .test(/\addon\.info\.json$/)
             .use('babel')
                 .loader('babel-loader')
@@ -52,7 +50,7 @@ module.exports = {
         plugins: [
             new CopyWebpackPlugin([
                 {
-                    from: "src/foxit-lib/",
+                    from: './node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/',
                     to: "foxit-lib",
                     force: true,
                     ignore: [

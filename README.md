@@ -32,7 +32,7 @@ This step will download all dependencies into `node_modules` folder.
 ### Runnning the example
 
 ```sh
-npm run serve
+npm start
 ```
 
 Now you are ready to launch the app. Open your browser, navigate to `<http://127.0.0.1:9103/>` to load your example.
@@ -210,7 +210,7 @@ Note: You can rebuild allInOne.js by using our [Addons merge tools](http://webvi
 ### Running your application
 
 ```sh
-npm run serve
+npm start
 ```
 
 Now everything is set up. Open your browser, input the address based on you set up to launch your application.
