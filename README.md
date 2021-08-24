@@ -17,7 +17,7 @@ FoxitPDFSDK for Web provides a boilerplate project for [@vue/cli](https://cli.vu
 Clone the repository to any location:
 
 ```bash
-git clone git@github.com:foxitsoftware/FoxitPDFSDKForWeb-VueJS-Example.git
+git clone https://github.com/foxitsoftware/FoxitPDFSDKForWeb-VueJS-Example.git
 ```
 
 Navigate to `FoxitPDFSDKForWeb-VueJS-Example/`, and execute:
