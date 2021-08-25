@@ -38,7 +38,7 @@ Now you are ready to launch the app. Open your browser, navigate to `<http://12
 
 ### Reference the fonts
 
-If some text in a PDF document requires a specified font to be rendered correctly, you need to specify a font loading path during initialization. In this example, you can refer to the `fontPath` configuration in `src/preload.js`. What we need to do is to copy the `external` folder in the SDK to the public folder so that the special font can be rendered normally.
+If some text in a PDF document requires a specified font to be rendered correctly, you need to specify a font loading path during initialization. In this example, you can refer to the `fontPath` configuration in `src/preload.js`. What we need to do is to copy the `external` folder in the SDK to the `public` folder so that the special font can be rendered normally.
 
 ## Integrate FoxitPDFSDK for Web into existing Vue.js project
 
