@@ -48,7 +48,7 @@ This integration assumes you have [@vue/cli](https://cli.vuejs.org/guide/) app i
 
 - [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
 - [@vue/cli](https://cli.vuejs.org/guide/)
-- [FoxitPDFSDK for Web](https://www.npmjs.com/package/@foxitsoftware/foxit-pdf-sdk-for-web-library)
+- [FoxitPDFSDK for Web](https://developers.foxit.com/products/web/)
 
 ### Setup
 
