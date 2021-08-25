@@ -9,10 +9,9 @@ FoxitPDFSDK for Web provides a boilerplate project for [@vue/cli](https://cli.vu
 ### Prerequisites
 
 - [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
-- [FoxitPDFSDK for Web](https://developers.foxitsoftware.com/pdf-sdk/Web)
+- [FoxitPDFSDK for Web](https://developers.foxit.com/products/web/)
 
 ### Getting started
-
 
 Clone the repository to any location:
 
@@ -37,6 +36,10 @@ npm start
 
 Now you are ready to launch the app. Open your browser, navigate to `<http://127.0.0.1:9103/>` to load your example.
 
+### Reference the fonts
+
+If some text in a PDF document requires a specified font to be rendered correctly, you need to specify a font loading path during initialization. In this example, you can refer to the `fontPath` configuration in `src/preload.js`. What we need to do is to copy the `external` folder in the SDK to the public folder so that the special font can be rendered normally.
+
 ## Integrate FoxitPDFSDK for Web into existing Vue.js project
 
 This integration assumes you have [@vue/cli](https://cli.vuejs.org/guide/) app installed with _all default settings_.
@@ -52,7 +55,8 @@ This integration assumes you have [@vue/cli](https://cli.vuejs.org/guide/) app i
 Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for Web as SDK.
 
 1. Install `@foxitsoftware/foxit-pdf-sdk-for-web-library`
-2. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `VueJS/package.json`.
+2. To correctly reference your fonts lib, duplicate the `external` folder inside SDK to `VueJS/public`.
+3. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `VueJS/package.json`.
 
    ```sh
    cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=development vue-cli-service serve
