@@ -28,6 +28,8 @@ npm install
 
 This step will download all dependencies into `node_modules` folder.
 
+Place the `license-key.js` into `./src`. You can find the license information at `SDK/examples/`
+
 ### Runnning the example
 
 ```sh
