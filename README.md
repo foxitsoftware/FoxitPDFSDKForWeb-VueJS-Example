@@ -118,7 +118,7 @@ Where `the_path_to_foxit_lib` is the SDK lib folder，
 3. In`PDFViewer.vue`, import `addon.info.json` for each addon:
 
     ```js
-        import * as UIExtension from '../foxit-lib/UIExtension.full.js'
+        import * as UIExtension from '@foxitsoftware/foxit-pdf-sdk-for-web-library'
         import filePropertyAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/file-property/addon.info.json';
         import multiMediaAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/multi-media/addon.info.json';
         import passwordProtectAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/password-protect/addon.info.json';
