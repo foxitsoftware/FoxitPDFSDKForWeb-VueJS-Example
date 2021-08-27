@@ -56,9 +56,15 @@ This integration assumes you have [@vue/cli](https://cli.vuejs.org/guide/) app i
 
 Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for Web as SDK.
 
-1. Install `@foxitsoftware/foxit-pdf-sdk-for-web-library`
-2. To correctly reference your fonts lib, duplicate the `external` folder inside SDK to `VueJS/public`.
-3. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `VueJS/package.json`.
+1. Install the lattest version of `@foxitsoftware/foxit-pdf-sdk-for-web-library`.
+  
+  ```bash
+    npm i -S @foxitsoftware/foxit-pdf-sdk-for-web-library
+  ```
+
+1. To correctly reference your fonts lib, duplicate the `external` folder inside SDK to `VueJS/public`.
+
+1. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `VueJS/package.json`.
 
    ```sh
    cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=development vue-cli-service serve
