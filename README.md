@@ -6,6 +6,36 @@ This guide shows two examples. One introduces how to quickly run the out-of-the-
 
 FoxitPDFSDK for Web provides a boilerplate project for [@vue/cli](https://cli.vuejs.org/guide/) app.
 
+### Overview the project structure
+
+```bash
+.
+├── babel.config.js
+├── package.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── README.md
+├── src
+│   ├── App.vue
+│   ├── components
+│   │   └── PDFViewer.vue
+│   ├── license-key.js
+│   ├── main.js
+│   └── preload.js
+└── vue.config.js
+```
+
+#### Key directory and files descriptions
+
+|        File/Folder        |                                        Description                                        |
+| :----------------------- | :---------------------------------------------------------------------------------------: |
+|           src/            |                        Contains all source files for the app.                         |
+| src/components/PDFViewer.vue/ |                Contains the initilization plugins for FoxitPDFSDK for Web.                |
+|      src/preload.js       |                     This entry point used to preload SDK core assets.                     |
+|       vue.config.js        | [Project configuration](https://cli.vuejs.org/config/#vue-config-js) |
+|       package.json        |                  Lists dependencies, version build information and ect.                   |
+
 ### Prerequisites
 
 - [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com)
