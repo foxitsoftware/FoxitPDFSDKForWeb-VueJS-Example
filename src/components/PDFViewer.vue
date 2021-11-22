@@ -36,7 +36,6 @@ export default {
                 }
             },
             renderTo: this.$refs.viewer,
-            appearance: UIExtension.appearances.adaptive,
             addons: [
                 filePropertyAddon,
                 multiMediaAddon,

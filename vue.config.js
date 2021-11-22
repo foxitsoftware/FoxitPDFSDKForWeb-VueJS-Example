@@ -10,16 +10,13 @@ module.exports = {
      */
     function(config) {
         config
-            .entry('adaptive')
-            .add(path.resolve('./node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library', 'lib/adaptive.js'))
-            .end()
             .entry("preload")
             .add(path.resolve("src/preload.js"))
             .end()
             .plugin("html")
             .tap(args => {
                 const [options,] = args;
-                options.chunks = ["adaptive", "preload", "chunk-vendors", "app"];
+                options.chunks = ["preload", "chunk-vendors", "app"];
                 options.chunksSortMode = 'manual';
                 return args;
             })
