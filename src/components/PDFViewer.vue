@@ -35,6 +35,7 @@ export default {
                     readyWorker: window.readyWorker
                 }
             },
+            appearance: UIExtension.appearances.adaptive,
             renderTo: this.$refs.viewer,
             addons: [
                 filePropertyAddon,
