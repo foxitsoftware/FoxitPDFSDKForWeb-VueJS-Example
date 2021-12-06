@@ -54,7 +54,8 @@ module.exports = {
                     to: "foxit-lib",
                     force: true,
                     ignore: [
-                        "{PDFViewCtrl,UIExtension}*.{js,css}",
+                        "{PDFViewCtrl,UIExtension}.js",
+                        "{PDFViewCtrl,UIExtension}.{vendor,polyfills}.js",
                         "preload-jr-worker.js"
                     ]
                 }
