@@ -84,6 +84,13 @@ This integration assumes you have [@vue/cli](https://cli.vuejs.org/guide/) app i
 
 ### Setup
 
+1. Create a Vue app, based on Vue 2.x
+  
+  ```bash
+    vue create my-vue-app
+    cd my-vue-app
+  ```
+
 Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for Web as SDK.
 
 1. Install the lattest version of `@foxitsoftware/foxit-pdf-sdk-for-web-library`.
@@ -92,13 +99,15 @@ Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for 
     npm i -S @foxitsoftware/foxit-pdf-sdk-for-web-library
   ```
 
-1. To correctly reference your fonts lib, duplicate the `external` folder inside SDK to `VueJS/public`.
+1. To correctly reference your fonts lib, duplicate the `external` folder inside SDK to `./public`.
 
-1. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `VueJS/package.json`.
+1. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `./package.json`.
 
    ```sh
-   cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=development vue-cli-service serve
-   cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=production vue-cli-service build
+   "scripts": {
+    "start": "cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=development vue-cli-service serve",
+    "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 NODE_ENV=production vue-cli-service build",
+   }
    ```
 
    _The purpose of this step is to void memory leak error._
@@ -149,7 +158,7 @@ Where `the_path_to_foxit_lib` is the SDK lib folder，
    npm i -D @foxitsoftware/addon-loader
    ```
 
-2. Update `vue.config.js`，you may refer to `/integrations/vue.js/vue.config.js`
+2. Update `vue.config.js`，you may refer to `./vue.config.js`
 
 3. In`PDFViewer.vue`, import `addon.info.json` for each addon:
 
