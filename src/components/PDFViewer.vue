@@ -54,8 +54,7 @@ export default {
                 hContinuesAddon,
                 RecognitionFormAddon,
                 pageTemplateAddon,
-                xfaFormAddon,
-                pageTemplateAddon
+                xfaFormAddon
             ].concat(
                 UIExtension.PDFViewCtrl.DeviceInfo.isMobile
                     ? []
