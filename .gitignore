@@ -24,3 +24,5 @@ yarn-error.log*
 
 src/foxit-lib
 src/license-key.js
+
+foxit-lib
