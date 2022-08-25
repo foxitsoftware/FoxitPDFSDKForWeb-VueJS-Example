@@ -1,4 +1,3 @@
-foxit-lib/**/*.js
 src/license-key.js
 vue.config.js
 node_modules/**/*.js
