@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@foxitsoftware/addon-loader": "^0.7.3",
-    "@foxitsoftware/foxit-pdf-sdk-for-web-library": "file:foxit-lib",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
