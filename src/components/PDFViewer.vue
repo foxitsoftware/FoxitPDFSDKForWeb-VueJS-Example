@@ -24,6 +24,7 @@ import hContinuesAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/ui
 import RecognitionFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/recognition-form/addon.info.json';
 import pageTemplateAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/page-template/addon.info.json';
 import xfaFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/xfa-form/addon.info.json';
+import rangeAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/range-input/addon.info.json';
 
 export default {
     mounted() {
@@ -54,7 +55,8 @@ export default {
                 hContinuesAddon,
                 RecognitionFormAddon,
                 pageTemplateAddon,
-                xfaFormAddon
+                xfaFormAddon,
+                rangeAddon
             ].concat(
                 UIExtension.PDFViewCtrl.DeviceInfo.isMobile
                     ? []
