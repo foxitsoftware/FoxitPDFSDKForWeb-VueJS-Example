@@ -45,21 +45,22 @@ module.exports = {
     },
     configureWebpack: {
         plugins: [
-            new CopyWebpackPlugin({
-                patterns:[
-                {
-                    from: './node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/',
-                    to: "foxit-lib",
-                    force: true,
-                    globOptions:{
-                        ignore: [
-                            "{PDFViewCtrl,UIExtension}.js",
-                            "{PDFViewCtrl,UIExtension}.{vendor,polyfills}.js",
-                            "preload-jr-worker.js"
-                        ]
-                    }
-                }
-            ]})
+            new CopyWebpackPlugin(
+              [
+                  {
+                      from: './node_modules/@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/',
+                      to: "foxit-lib",
+                      force: true,
+                      globOptions:{
+                          ignore: [
+                              "{PDFViewCtrl,UIExtension}.js",
+                              "{PDFViewCtrl,UIExtension}.{vendor,polyfills}.js",
+                              "preload-jr-worker.js"
+                          ]
+                      }
+                  }
+              ]
+            )
         ]
     },
     devServer: {
