@@ -26,3 +26,5 @@ src/foxit-lib
 src/license-key.js
 
 foxit-lib
+
+package-lock.json
