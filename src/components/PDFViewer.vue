@@ -34,6 +34,11 @@ export default {
                 libPath,
                 jr: {
                     readyWorker: window.readyWorker
+                },
+                messageSyncServiceWorker: {
+                    options:{
+                        scope: libPath
+                    }
                 }
             },
             appearance: UIExtension.appearances.adaptive,
