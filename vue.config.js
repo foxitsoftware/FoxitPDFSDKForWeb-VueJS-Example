@@ -67,6 +67,9 @@ module.exports = {
     },
     devServer: {
         allowedHosts: "all",
-        port: 9103
+        port: 9103,
+        headers: {
+            'Service-Worker-Allowed': '/'
+        }
     }
 };

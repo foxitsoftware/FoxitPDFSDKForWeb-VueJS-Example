@@ -26,6 +26,7 @@ import pageTemplateAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/
 import xfaFormAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/xfa-form/addon.info.json';
 import rangeAddon from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/uix-addons/range-input/addon.info.json';
 
+
 export default {
     mounted() {
         const libPath = '/foxit-lib/';
@@ -34,11 +35,6 @@ export default {
                 libPath,
                 jr: {
                     readyWorker: window.readyWorker
-                },
-                messageSyncServiceWorker: {
-                    options:{
-                        scope: libPath
-                    }
                 }
             },
             appearance: UIExtension.appearances.adaptive,
