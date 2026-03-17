@@ -150,6 +150,23 @@ Let's call the root folder of your exiting project as VueJS and FoxitPDFSDK for 
     npm i -S @foxitsoftware/foxit-pdf-sdk-for-web-library
   ```
 
+1. Copy the `license-key.js` to `./src`
+
+1. In `src`, create `preload.js`:
+
+   ```js
+   import preloadJrWorker from '@foxitsoftware/foxit-pdf-sdk-for-web-library/lib/preload-jr-worker';
+   import { licenseKey, licenseSN } from './license-key';
+
+   window.readyWorker = preloadJrWorker({
+       workerPath: '/foxit-lib/',
+       enginePath: '/foxit-lib/jr-engine/gsdk',
+       fontPath: '/external/brotli',
+       licenseSN,
+       licenseKey,
+   });
+   ```
+
 1. To correctly reference your fonts lib, duplicate the `external` folder inside SDK to `./public`.
 
 1. Run `npm i -D cross-env` to install `cross-env`, and add the following segments to `serve` and `build` in `./package.json`.
