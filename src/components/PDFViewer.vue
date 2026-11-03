@@ -21,10 +21,15 @@ export default {
                 '/foxit-lib/uix-addons/allInOne.mobile.js' :
                 '/foxit-lib/uix-addons/allInOne.js'
         });
+        window.pdfui = this.pdfui;
 
         window.addEventListener('resize', () => {
             this.pdfui.redraw();
         });
+    },
+    beforeDestroy() {
+        this.pdfui.destroy();
+        window.pdfui = null;
     }
 }
 </script>
